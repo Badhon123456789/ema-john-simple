@@ -1,0 +1,27 @@
+.product{
+    display: flex;
+    font-weight: 400;
+    border-bottom: 1px solid gray;
+    padding-bottom: 50px;
+}
+.text{
+    padding-left: 20px;
+}
+#blue{
+    color: blue;
+    font-size: 17px;
+    font-weight: 500;
+    text-decoration: none;
+}
+a{
+    text-decoration: none;
+}
+.main-button{
+    background-color: #f0c14b;
+    height: 30px;
+    width: 160px;
+    color: black;
+    border-radius: 5px;
+    border: 1px solid gray;
+    cursor: pointer;
+}
