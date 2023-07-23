@@ -8,13 +8,11 @@ import {BrowserRouter as Router,
 import Review from './components/Review/Review';
 import Inventory from './components/Inventory/Inventory';
 
-
-
 function App() {
 
- 
   return (
-    <Router>
+    <>
+     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
@@ -22,6 +20,7 @@ function App() {
         <Route path="/inventory" element={<Inventory/>} />
       </Routes>
     </Router>
+   </>
   );
 }
 

@@ -1,13 +1,20 @@
-import React, {useContext} from "react";
+import React, { useEffect, useState} from "react";
 // import f from "../../fakeData/products.json";
 import "./Shop.css";
 import Product from "../Product/Product";
 import Cart from "../Cart/Cart";
-import { CartContext } from "../Context/Context";
 
 
-const Shop = () => {
-  const {cart,setCart, products,setProducts} = useContext(CartContext)
+const Shop = () => { 
+    const [cart, setCart] = useState([])
+  const [products, setProducts] = useState([])
+
+  useEffect(() => {
+      fetch('https://raw.githubusercontent.com/ProgrammingHero1/ema-john-simple-resources/master/fakeData/products.JSON')
+          .then(res => res.json())
+          .then(data => setProducts(data))
+  }, []);
+ 
 
   const start = Math.round(Math.random()*71)
   const first10 = products.slice(start, start+10);
@@ -31,7 +38,7 @@ const Shop = () => {
         ))}
       </div>
       <div className="cart-container">
-        <Cart cart = {cart}></Cart>
+        <Cart cart = {{cart, setCart}}></Cart>
       
       </div>
     </div>
